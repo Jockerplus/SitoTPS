@@ -1,45 +1,62 @@
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="style.css">
-<script src="script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-</head>
-<body>
-<div id="page">
-<div id="header"></div>
-<div id="menublock">
-<div id="menu">
-<a href="" class="menuitem">lol</a>
-<a href="" class="menuitem">lol</a>
-<a href="" class="menuitem">lol</a>
-<a href="" class="menuitem">lol</a>
-<a href="" class="menuitem">lol</a>
-</div>
-</div>
-<div id="sidebar">
-<p class="noselect">I have nothing to say</p>
-</div>
-<div id="main">
-<form action="">
-  Nome:<br>
-  <input class="textinput " type="text" name="nome" >
-  <br>
-  Cognome:<br>
-  <input class="textinput" type="text" name="cognome" >
-  <br><br>
-  <input id="scelta" type="checkbox" name="checklol" value="option">
-  <label for="scelta"><span><span></span></span>Checkbox</label>
-  <input id="M" type="radio" name="Sesso" value="M">
-  <label for="M"><span><span></span></span>Maschio</label>
-  <input id="F" type="radio" name="Sesso" value="F">
-  <label for="F"><span><span></span></span>Femmina</label>
-  <br>
-  <input type="submit" value="Invia">
-</form>
-</div>
-<div id="footer">
-lol
-</div>
-</div>
-</body>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="./js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="page">
+      <div id="header"></div>
+      <div id="menublock">
+        <div id="menu">
+          <a href="" class="menuitem">Spring</a>
+          <a href="" class="menuitem">Summer</a>
+          <a href="" class="menuitem menuitemmain">Home</a>
+          <a href="" class="menuitem">Fall</a>
+          <a href="" class="menuitem">Winter</a>
+        </div>
+      </div>
+      <div id="sidebar">
+        <div align="center">
+          <img src="./img/logo.png" width="200px"/>
+        </div>  
+        <p class="noselect">Login:</p>
+        <form action="">
+          Username:<br>
+          <input class="textinput " type="text" name="nome" >
+          <br>
+          Password:<br>
+          <input class="textinput" type="text" name="cognome" >
+          <br><br>
+          <input id="scelta" type="checkbox" name="checklol" value="option">
+          <label for="scelta"><span><span></span></span>Keep Me Logged In</label><br>
+          <input type="submit" value="Log In">
+        </form>
+      </div>
+      <div id="main">
+        <h2>Plan your best holiday with YourHolidayCamp</h2>
+        Welcome Visitor! You are now one step away from creating your awesome holiday!
+        Take a look at the catalogue and check out the Fall page the the upcoming Fall Season!
+        <hr />
+        <h2>Red Forest, Germany</h2>
+        Immersed in the natural silence of the red forest, you will regenerate from the stress of everyday, and fall deeply in
+        love with your own origins, and your own self.
+        <br />
+        The weather is cold, the sky is clear as it gets, the night is brightly lit by clear stars.
+        <br /><br />
+        <a href="#">Read More</a><br />
+        <div align="center">
+          <img src="./img/red-forest.jpg" width="1000" height="500"/>
+        </div>
+      </div>
+      <div id="footer">
+        <div align="center">
+          <h2>&copy;YourHolidayCamp</h2>
+          Via Milano 12, 10140<br />
+          Turin, Italy<br />
+          +39 (329)-123-CAMP
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
