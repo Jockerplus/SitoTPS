@@ -4,10 +4,23 @@
 }
 
 html, body{
-  color: #3c3c3c;
-  overflow-x: hidden;
+  color            : #3c3c3c;
+  overflow-x       : hidden;
 }
 
+
+#logo{
+	height:  100px;
+	background-color: rgb(175, 15, 157); 	
+	-webkit-mask-image: url('../img/logo.png');
+	mask-image: url('../img/logo.png');
+	-webkit-mask-size: contain;
+	mask-size: contain;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+
+	background-size: cover;
+}
 #menu{
   position         : relative;
   margin           : auto;
@@ -160,6 +173,13 @@ input[type=radio]:checked + label > span > span{
   border-radius    : 0.175em;
   background       : rgb(175, 15, 157)
 
+}
+
+.thumbnail{
+	float: left;
+	border: 2px solid white ;
+	outline: 1px solid gray;
+	margin: 3px;
 }
 
 div :hover{
