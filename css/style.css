@@ -3,6 +3,66 @@
   font-family       : junction;
 }
 
+@-webkit-keyframes maincol {
+    0%{background-color:rgb(123, 173, 247);}
+    25%{background-color:rgb(247, 123, 234);}
+	50%{background-color:rgb(50, 229, 50);}
+	75%{background-color:rgb(255, 165, 40);}
+    100%{background-color:rgb(123, 173, 247);}
+}
+
+@keyframes maincol{ 
+    0%{background-color:rgb(123, 173, 247);}
+    25%{background-color:rgb(247, 123, 234);}
+	50%{background-color:rgb(50, 229, 50);}
+	75%{background-color:rgb(255, 165, 40);}
+    100%{background-color:rgb(123, 173, 247);}
+}
+
+@-webkit-keyframes wincol {
+    0%{background-color:rgb(123, 173, 247);}
+    100%{background-color:rgb(92, 134, 196);}
+}
+
+@keyframes wincol{ 
+    0%{background-color:rgb(123, 173, 247);}
+    50%{background-color:rgb(92, 134, 196);}
+    100%{background-color:rgb(111, 237, 230);}
+}
+@-webkit-keyframes sprcol {
+    0%{background-color:rgb(247, 123, 234);}
+    50%{background-color:rgb(255, 76, 186);}
+    100%{background-color:rgb(123, 173, 247);}
+}
+
+@keyframes sprcol{ 
+    0%{background-color:rgb(247, 123, 234);}
+    50%{background-color:rgb(255, 76, 186);}
+    100%{background-color:rgb(198, 91, 187);}
+}
+@-webkit-keyframes sumcol {
+    0%{background-color:rgb(50, 229, 50);}
+	50%{background-color:rgb(44, 221, 8);}
+	100%{background-color:rgb(41, 188, 41);}
+}
+
+@keyframes sumcol{ 
+    0%{background-color:rgb(50, 229, 50);}
+	50%{background-color:rgb(44, 221, 8);}
+	100%{background-color:rgb(41, 188, 41);}
+}
+@-webkit-keyframes falcol {
+    0%{background-color:rgb(255, 226, 40);}
+	50%{background-color:rgb(255, 165, 40);}
+	100%{background-color:rgb(255, 68, 40);}
+}
+
+@keyframes falcol{ 
+    0%{background-color:rgb(255, 226, 40);}
+	50%{background-color:rgb(255, 165, 40);}
+	100%{background-color:rgb(255, 68, 40);}
+}
+
 html, body{
   color            : #3c3c3c;
   overflow-x       : hidden;
@@ -10,16 +70,16 @@ html, body{
 
 
 #logo{
-	height:  100px;
-	background-color: rgb(175, 15, 157); 	
+	height:  100px; 	
+	margin-bottom: 20px;
 	-webkit-mask-image: url('../img/logo.png');
 	mask-image: url('../img/logo.png');
 	-webkit-mask-size: contain;
 	mask-size: contain;
 	-webkit-mask-repeat: no-repeat;
 	mask-repeat: no-repeat;
-
 	background-size: cover;
+	
 }
 #menu{
   position         : relative;
@@ -33,6 +93,13 @@ html, body{
   width            : 100%;
   height           : 50px;
   padding-top      : 9px;
+}
+
+#winter{
+	background-color:
+}
+#spring{
+	background-color:
 }
 
 .menuitem{
@@ -175,6 +242,36 @@ input[type=radio]:checked + label > span > span{
 
 }
 
+.maincolor{
+   background-color: rgb(123, 173, 247);
+   -webkit-animation: maincol 40s ease infinite;
+   animation: maincol 40s ease infinite;
+}
+
+.wintercolor{
+   background-color: rgb(123, 173, 247);
+   -webkit-animation: wincol 20s ease alternate infinite;
+   animation: wincol 20s ease alternate infinite;
+}
+
+.springcolor{
+   background-color:rgb(247, 123, 234);
+   -webkit-animation: sprcol 20s ease alternate infinite;
+   animation: sprcol 20s ease alternate infinite;
+}
+
+.summercolor{
+   background-color:rgb(50, 229, 50);
+   -webkit-animation: sumcol 20s ease alternate infinite;
+   animation: sumcol 20s ease alternate infinite;
+}
+
+.fallcolor{
+   background-color:rgb(255, 226, 40);
+   -webkit-animation: falcol 20s ease alternate infinite;
+   animation: falcol 20s  ease alternate infinite;
+}
+
 .thumbnail{
 	float: left;
 	border: 2px solid white ;
@@ -182,13 +279,16 @@ input[type=radio]:checked + label > span > span{
 	margin: 3px;
 }
 
-div :hover{
-  background-color  : rgba(175, 15, 157, 0.5);
+.link{
+	text-decoration: none;
+	color: rgb(175, 15, 157);
 }
 
+.link:hover{
+	background-color: transparent;
+	text-decoration: underline;
+}
 
-
-
-
-
-
+.menuitem:hover{
+  background-color  : rgba(175, 15, 157, 0.5);
+}
