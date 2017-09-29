@@ -1,3 +1,9 @@
+var animator = new Animator();
+var test = new Cake("#test",[{color: "#ff0000",value: 10,maxValue: 100},
+                            {color: "#00ff00",value: 30,maxValue: 100},
+                            {color: "#0000ff",value: 40,maxValue: 100},
+                            {color: "#ff00ff",value: 20,maxValue: 100}]);
+animator.add(test);
 
 var colors = new Array(
   [62,35,255],
