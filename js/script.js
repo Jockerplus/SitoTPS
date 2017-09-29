@@ -1,8 +1,8 @@
 var animator = new Animator();
-var test = new Cake("#test",[{color: "#ff0000",value: 10,maxValue: 100},
-                            {color: "#00ff00",value: 30,maxValue: 100},
-                            {color: "#0000ff",value: 40,maxValue: 100},
-                            {color: "#ff00ff",value: 20,maxValue: 100}]);
+var test = new Cake("#test",[{color: "#ff0000",value: 10,maxValue: 100, text: "Fall  12300"},
+                            {color: "#00ff00",value: 30,maxValue: 100, text: "Summer  45000"},
+                            {color: "#0000ff",value: 40,maxValue: 100, text: "Winter  23000"},
+                            {color: "#ff00ff",value: 20,maxValue: 100, text: "Spring  10000"}]);
 animator.add(test);
 
 var colors = new Array(
