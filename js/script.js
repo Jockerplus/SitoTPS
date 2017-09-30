@@ -1,8 +1,9 @@
 var animator = new Animator();
-var test = new Cake("#test",[{color: "#ff0000",value: 10,maxValue: 100, text: "Fall  12300"},
-                            {color: "#00ff00",value: 30,maxValue: 100, text: "Summer  45000"},
-                            {color: "#0000ff",value: 40,maxValue: 100, text: "Winter  23000"},
-                            {color: "#ff00ff",value: 20,maxValue: 100, text: "Spring  10000"}]);
+var test = new Cake("#test",[{color: "#ffe228",value: 10,maxValue: 100, text: "Fall  12300"},
+                            {color: "#7badf7",value: 40,maxValue: 100, text: "Winter  23000"},
+                            {color: "#f77bea",value: 20,maxValue: 100, text: "Spring  10000"},
+                            {color: "#32e532",value: 30,maxValue: 100, text: "Summer  45000"},
+                          ], "People");
 animator.add(test);
 
 var colors = new Array(
@@ -14,7 +15,7 @@ var colors = new Array(
   [255,128,0]);
 
 var step = 0;
-//color table indices for: 
+//color table indices for:
 // current color left
 // next color left
 // current color right
@@ -26,9 +27,9 @@ var gradientSpeed = 0.002;
 
 function updateGradient()
 {
-  
+
   if ( $===undefined ) return;
-  
+
 var c0_0 = colors[colorIndices[0]];
 var c0_1 = colors[colorIndices[1]];
 var c1_0 = colors[colorIndices[2]];
@@ -48,19 +49,19 @@ var color2 = "rgb("+r2+","+g2+","+b2+")";
  $('.colors').css({
    background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
     background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
-  
+
   step += gradientSpeed;
   if ( step >= 1 )
   {
     step %= 1;
     colorIndices[0] = colorIndices[1];
     colorIndices[2] = colorIndices[3];
-    
+
     //pick two new target color indices
     //do not pick the same as the current one
     colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
     colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
-    
+
   }
 }
 

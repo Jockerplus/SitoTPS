@@ -15,10 +15,11 @@ Animator.prototype.add = function(animatable){
   this.objects.push(animatable);
 }
 
-function Cake(canvas, data){
+function Cake(canvas, data, defaultText){
   var self = this;
   this.canvas = $(canvas);
   this.data = data;
+  this.defaultText = defaultText;
   for(var i = 0; i < this.data.length; i++){
     this.data[i].animationState = 0;
     this.data[i].mouseOnTime = 0;
@@ -40,20 +41,22 @@ function Cake(canvas, data){
 
 Cake.prototype.update = function(){
   this.context.clearRect(0, 0, this.width, this.height);
+  var mouseOn = false;
   for(var i = 0; i < this.data.length; i++){
     if(this.data[i].animationState < 100 || true){
       this.data[i].angle = ((2 * Math.PI) / this.data[i].maxValue)  * this.data[i].value * ((Math.sin(Math.min(this.data[i].animationState, 100) / 100 * Math.PI - (Math.PI / 2)) + 1) / 2);
       this.context.beginPath();
-      this.context.ellipse(this.center.x, this.center.y, this.radius, this.radius, this.data[i].animationState / 5000 + this.prev, 0, this.data[i].angle, false);
+      this.context.ellipse(this.center.x, this.center.y, this.radius, this.radius, this.data[i].animationState / 3000 + this.prev, 0, this.data[i].angle, false);
       this.context.strokeStyle = this.data[i].color;
       this.context.lineWidth = 10 + this.data[i].mouseOnTime / 2;
       this.context.stroke();
       if(this.mouse && this.context.isPointInStroke(this.mouse.x, this.mouse.y)){
+        mouseOn = true;
         var color = hexToRgb(this.data[i].color);
-        this.context.fillStyle = "rgba("+ color.r * (this.data[i].mouseOnTime / 10) +", "+ color.g * (this.data[i].mouseOnTime / 10) +" , "+ color.b * (this.data[i].mouseOnTime / 10) +" , "+ this.data[i].mouseOnTime * 25 +")";
-        this.context.font = "20px sans-serif"
+        this.context.fillStyle = this.data[i].color;
+        this.context.font = Math.min(parseInt(this.data[i].mouseOnTime *3), 30) + "px sans-serif"
         this.context.textAlign = "center";
-        this.context.lineWidth = 1;
+        this.context.textBaseline = "middle";
         this.context.fillText(this.data[i].text, this.center.x, this.center.y);
         if(this.data[i].mouseOnTime < 10){
           this.data[i].mouseOnTime++;
@@ -69,7 +72,14 @@ Cake.prototype.update = function(){
     }
 
   }
-  this.prev = this.data[0].animationState / 5000;
+  this.prev = this.data[0].animationState / 3000;
+  if(!mouseOn && typeof this.defaultText !== "undefined"){
+    this.context.fillStyle = "#3c3c3c";
+    this.context.font = "30px sans-serif"
+    this.context.textAlign = "center";
+    this.context.textBaseline = "middle";
+    this.context.fillText(this.defaultText, this.center.x, this.center.y);
+  }
 }
 
 function getMousePos(canvas, evt) {
@@ -88,5 +98,3 @@ function hexToRgb(hex) {
         b: parseInt(result[3], 16)
     } : null;
 }
-
-

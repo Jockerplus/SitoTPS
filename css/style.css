@@ -11,20 +11,20 @@
     100%{background-color:rgb(123, 173, 247);}
 }
 
-@keyframes maincol{ 
+@keyframes maincol{
     0%{background-color:rgb(123, 173, 247);}
     25%{background-color:rgb(247, 123, 234);}
 	50%{background-color:rgb(50, 229, 50);}
 	75%{background-color:rgb(255, 165, 40);}
     100%{background-color:rgb(123, 173, 247);}
-}
+}        </div>        </div>
 
 @-webkit-keyframes wincol {
     0%{background-color:rgb(123, 173, 247);}
     100%{background-color:rgb(92, 134, 196);}
 }
 
-@keyframes wincol{ 
+@keyframes wincol{
     0%{background-color:rgb(123, 173, 247);}
     50%{background-color:rgb(92, 134, 196);}
     100%{background-color:rgb(111, 237, 230);}
@@ -35,7 +35,7 @@
     100%{background-color:rgb(123, 173, 247);}
 }
 
-@keyframes sprcol{ 
+@keyframes sprcol{
     0%{background-color:rgb(247, 123, 234);}
     50%{background-color:rgb(255, 76, 186);}
     100%{background-color:rgb(198, 91, 187);}
@@ -46,7 +46,7 @@
 	100%{background-color:rgb(41, 188, 41);}
 }
 
-@keyframes sumcol{ 
+@keyframes sumcol{
     0%{background-color:rgb(50, 229, 50);}
 	50%{background-color:rgb(44, 221, 8);}
 	100%{background-color:rgb(41, 188, 41);}
@@ -57,7 +57,7 @@
 	100%{background-color:rgb(255, 68, 40);}
 }
 
-@keyframes falcol{ 
+@keyframes falcol{
     0%{background-color:rgb(255, 226, 40);}
 	50%{background-color:rgb(255, 165, 40);}
 	100%{background-color:rgb(255, 68, 40);}
@@ -70,7 +70,7 @@ html, body{
 
 
 #logo{
-	height:  100px; 	
+	height:  100px;
 	margin-bottom: 20px;
 	-webkit-mask-image: url('../img/logo.png');
 	mask-image: url('../img/logo.png');
@@ -79,7 +79,7 @@ html, body{
 	-webkit-mask-repeat: no-repeat;
 	mask-repeat: no-repeat;
 	background-size: cover;
-	
+
 }
 #menu{
   position         : relative;
@@ -114,13 +114,21 @@ html, body{
   color            : white;
   text-align       : center;
   line-height      : 40px;
-  border-radius    : 5px; 
+  border-radius    : 5px;
 }
 
 .menuitem.menuitemmain{
   height           : 40px;
   width            :  calc(20% - 6px);
   font-size: 1.2em;
+}
+
+.clear{
+  clear: both;
+}
+
+.stats{
+  float: left;
 }
 
 #header{
@@ -170,7 +178,7 @@ html, body{
 
 input[type=text] {
   margin           : 6px;
-  padding          :5px; 
+  padding          :5px;
   border           :2px solid rgb(204, 204, 204);
   border-radius    : 5px;
 }
@@ -183,12 +191,12 @@ input:focus {
 input[type=submit] {
   margin           : 6px;
   padding          : 5px 15px;
-  background       : rgba(204, 204, 204, 1); 
+  background       : rgba(204, 204, 204, 1);
   border           : 2px solid rgb(204, 204, 204);
-  border-radius    : 5px; 
+  border-radius    : 5px;
   cursor           : pointer;
   font-size        : 1em;
-  
+
 }
 
 input[type=submit]:active{
