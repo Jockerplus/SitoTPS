@@ -66,11 +66,15 @@
 html, body{
   color            : #3c3c3c;
   overflow-x       : hidden;
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 
 
 #logo{
-	height:  100px;
+	width: 100%;
+	height: 100px;
 	margin-bottom: 20px;
 	-webkit-mask-image: url('../img/logo.png');
 	mask-image: url('../img/logo.png');
@@ -78,13 +82,14 @@ html, body{
 	mask-size: contain;
 	-webkit-mask-repeat: no-repeat;
 	mask-repeat: no-repeat;
-	background-size: cover;
-
+	-webkit-mask-position: center top;
+	mask-position: center top;
+	z-index: -90
 }
 #menu{
   position         : relative;
   margin           : auto;
-  width            : 50%;
+  text-align: center;
 }
 
 #menublock{
@@ -105,7 +110,8 @@ html, body{
 .menuitem{
   margin           : auto;
   height           : 35px;
-  width            :  calc(20% - 16px);
+  width            : 19%;
+  max-width: 100px;
   display          : inline-block;
   background-color : rgba(175, 168, 168, 0.1);
   text-decoration  : none;
@@ -113,8 +119,10 @@ html, body{
   transition       : all 0.5s;
   color            : white;
   text-align       : center;
-  line-height      : 40px;
-  border-radius    : 5px;
+  border-radius    : 5px; 
+  z-index: 50;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .menuitem.menuitemmain{
@@ -132,47 +140,43 @@ html, body{
 }
 
 #header{
+  height: 50px;
   display          : block;
-  height           : 59px;
   width            : 100%;
 }
 
 #sidebar{
+  float: left;
   padding          : 10px;
-  display          : inline-block;
   height           : 100%;
-  width            : calc(17% - 19.5px);
-  background-color : rgba(213, 213, 213, 0.3);
-  overflow         : hidden;
+  width            : 200px;
+  background-color : #d0d0d0;
   position         : fixed;
   margin           : 0;
+  z-index: -100;
 }
 
 #main{
+  float: right;
   padding          : 10px;
   padding-top:     : 50px;
   padding-bottom   : 50px;
-  display          : inline-block;
-  width            : calc(83% - 19px);
-  background-color : rgba(213, 213, 213, 0.5);
-  overflow         : hidden;
-  margin-left      : calc(17%);
+  width            : calc(100% - 240px);
+  background-color : rgba(255, 255, 255, 1);
+  box-sizing: border-box;
 }
 
 #footer{
+	clear: both;
+	width: 100%;
   padding          : 10px;
   padding-bottom   : 40px;
-  background-color : rgba(213, 213, 213, 0.8);
+  background-color : #d0d0d0;
   margin-top       : -4px;
-  z-index          :  -100;
+  z-index          :  100;
 }
 
 #page{
-  position         : absolute;
-  left             : 0px;
-  top              : 0px;
-  height           : 100%;
-  width            : 100%;
   font-family      : junction;
 }
 
@@ -188,7 +192,7 @@ input:focus {
   outline          : none;
 }
 
-input[type=submit] {
+input[type=submit], .button {
   margin           : 6px;
   padding          : 5px 15px;
   background       : rgba(204, 204, 204, 1);
@@ -299,4 +303,33 @@ input[type=radio]:checked + label > span > span{
 
 .menuitem:hover{
   background-color  : rgba(175, 15, 157, 0.5);
+}
+
+@media only screen and (max-width: 768px) {
+
+#sidebar{
+	width: 100%;
+	position: static;
+	height: auto;
+	text-align: center;
+	float: none;
+	box-sizing: border-box;
+}
+
+#main{
+	width: 100%;
+	clear:both;
+	float: none;
+}
+
+#menu{
+	width: 100%;
+	text-align: center;
+	font-size: 0.8em;
+}
+#menublock{
+	height: 50px;
+	box-sizing: border-box;
+}
+
 }

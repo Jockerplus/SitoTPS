@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <div id="page">
@@ -19,18 +20,20 @@
         <div align="center">
           <div class="maincolor" id="logo"></div>
         </div>
-
-        <form action="">
-          Username:<br>
-          <input class="textinput " type="text" name="user" >
-          <br>
-          Password:<br>
-          <input class="textinput" type="text" name="psw" >
-          <br><br>
-          <input id="scelta" type="checkbox" name="log" value="option">
-          <label for="scelta"><span><span></span></span>Keep Me Logged In</label><br>
-          <input type="submit" value="Log In">
-        </form>
+		<div id="userarea">
+			<form id="login">
+			  Username:<br>
+			  <input class="textinput " type="text" name="user" id="user">
+			  <br>
+			  Password:<br>
+			  <input class="textinput" type="text" name="psw" id="pass">
+			  <keygen name="aut" keytype="rsa">
+			  <br><br>
+			  <input id="scelta" type="checkbox" name="log" value="option">
+			  <label for="scelta"><span><span></span></span>Keep Me Logged In</label><br>
+			  <input type="submit" value="Log In">
+			</form>
+		</div>
       </div>
       <div id="main">
         <h2 >Plan your best holiday with YourHolidayCamp</h2>
@@ -64,13 +67,13 @@
         The water is limpid and clean
         <br /><br />
         <a class="link" href="#">Read More</a><br />
-
-        <br class="clear"/>
-    		<h3>Tulip Garden, Holland</h3>
-    		<img class="thumbnail" src="./img/spring-garden.jpeg" height="100" />
-        A peaceful piece of nature, away from the civilization
+		
+		<br><br><br>
+		<h3>Tulip Garden, Holland</h3>
+		<img class="thumbnail" src="./img/spring-garden.jpeg" height="100" />
+        A great garden to pass an entire day in.
         <br />
-        The weather is cold, the sky is clear as it gets, the night is brightly lit by clear stars.
+        The smell of the tulips will take your worries away
         <br /><br />
         <a class="link" href="#">Read More</a><br />
 
