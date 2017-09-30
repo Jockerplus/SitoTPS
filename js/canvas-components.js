@@ -1,6 +1,6 @@
 function Animator(){
   this.objects = [];
-  
+
   this.update();
 }
 
@@ -44,7 +44,7 @@ Cake.prototype.update = function(){
     if(this.data[i].animationState < 100 || true){
       this.data[i].angle = ((2 * Math.PI) / this.data[i].maxValue)  * this.data[i].value * ((Math.sin(Math.min(this.data[i].animationState, 100) / 100 * Math.PI - (Math.PI / 2)) + 1) / 2);
       this.context.beginPath();
-      this.context.ellipse(this.center.x, this.center.y, this.radius - 20 * i, this.radius - 20 * i, this.data[i].animationState / 5000 + this.prev, 0, this.data[i].angle, false);
+      this.context.ellipse(this.center.x, this.center.y, this.radius, this.radius, this.data[i].animationState / 5000 + this.prev, 0, this.data[i].angle, false);
       this.context.strokeStyle = this.data[i].color;
       this.context.lineWidth = 10 + this.data[i].mouseOnTime / 2;
       this.context.stroke();
@@ -59,7 +59,7 @@ Cake.prototype.update = function(){
         }
       }
       this.prev = this.data[i].angle + this.prev;
-      
+
       this.data[i].animationState++;
     }
 
@@ -74,5 +74,3 @@ function getMousePos(canvas, evt) {
     y: evt.clientY - rect.top
   };
 }
-
-
