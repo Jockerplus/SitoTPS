@@ -49,7 +49,12 @@ Cake.prototype.update = function(){
       this.context.lineWidth = 10 + this.data[i].mouseOnTime / 2;
       this.context.stroke();
       if(this.mouse && this.context.isPointInStroke(this.mouse.x, this.mouse.y)){
-        this.context.lineWidth = 10;
+        var color = hexToRgb(this.data[i].color);
+        this.context.fillStyle = "rgba("+ color.r * (this.data[i].mouseOnTime / 10) +", "+ color.g * (this.data[i].mouseOnTime / 10) +" , "+ color.b * (this.data[i].mouseOnTime / 10) +" , "+ this.data[i].mouseOnTime * 25 +")";
+        this.context.font = "20px sans-serif"
+        this.context.textAlign = "center";
+        this.context.lineWidth = 1;
+        this.context.fillText(this.data[i].text, this.center.x, this.center.y);
         if(this.data[i].mouseOnTime < 10){
           this.data[i].mouseOnTime++;
         }
@@ -74,3 +79,14 @@ function getMousePos(canvas, evt) {
     y: evt.clientY - rect.top
   };
 }
+
+function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+
+
