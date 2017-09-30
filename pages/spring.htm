@@ -19,17 +19,20 @@
           <div class="springcolor" id="logo"></div>
         </div>
 		
-        <form action="">
-          Username:<br>
-          <input class="textinput " type="text" name="user" >
-          <br>
-          Password:<br>
-          <input class="textinput" type="text" name="psw" >
-          <br><br>
-          <input id="scelta" type="checkbox" name="log" value="option">
-          <label for="scelta"><span><span></span></span>Keep Me Logged In</label><br>
-          <input type="submit" value="Log In">
-        </form>
+		<div id="userarea">
+			<form id="login">
+			  Username:<br>
+			  <input class="textinput " type="text" name="user" id="user">
+			  <br>
+			  Password:<br>
+			  <input class="textinput" type="text" name="psw" id="pass">
+			  <keygen name="aut" keytype="rsa">
+			  <br><br>
+			  <input id="scelta" type="checkbox" name="log" value="option">
+			  <label for="scelta"><span><span></span></span>Keep Me Logged In</label><br>
+			  <input type="submit" value="Log In">
+			</form>
+		</div>
       </div>
       <div id="main">
         <canvas width=300 height=300 id="test"></canvas>

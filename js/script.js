@@ -4,6 +4,7 @@ var test = new Cake("#test",[{color: "#ff0000",value: 10,maxValue: 100},
                             {color: "#0000ff",value: 40,maxValue: 100},
                             {color: "#ff00ff",value: 20,maxValue: 100}]);
 animator.add(test);
+animator.add(test);
 
 var colors = new Array(
   [62,35,255],
@@ -64,4 +65,70 @@ var color2 = "rgb("+r2+","+g2+","+b2+")";
   }
 }
 
+var keepLogged = $("#scelta")[0].checked;
+
+var login = $("#userarea")[0].innerHTML;
+
+if(getCookie("logged") == "1"){
+	var username = getCookie("user");
+	$("#userarea")[0].innerHTML = "<h3>Welcome <b>" + username + "</b></h3><button id='logout' class='button'>Logout</button>";
+	$("#logout")[0].onclick = () => {
+		setCookie("logged", 0);
+		$("#userarea")[0].innerHTML = login;
+		registerLogin();
+	};
+}else{
+	registerLogin();
+}
+
+function registerLogin(){
+	$("#login")[0].onsubmit = () => {
+		var keepLogged = $("#scelta")[0].checked;
+		var username = $("#user")[0].value;
+		var password = $("#pass")[0].value;
+		if(username.length > 0 && password.length > 0){
+			setCookie("logged", 1, keepLogged ? 10 : 0);
+			setCookie("user", username, keepLogged ? 10 : 0);
+			setCookie("pass", password, keepLogged ? 10 : 0);
+			$("#userarea")[0].innerHTML = "<h3>Welcome <b>" + username + "</b></h3><button id='logout' class='button'>Logout</button>";
+			$("#logout")[0].onclick = () => {
+				setCookie("logged", 0);
+				$("#userarea")[0].innerHTML = login;
+				registerLogin();
+			};
+		}else{
+			alert("Invalid Credentials");
+		}
+		return false;
+	};
+}
+
 setInterval(updateGradient,10);
+setInterval(updateGradient,10);
+
+function setCookie(cname,cvalue,exdays=0) {
+    var d = new Date();
+	if(exdays != 0){
+		    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		var expires = "expires=" + d.toGMTString();
+		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}else{
+		document.cookie = cname + "=" + cvalue + ";" + "path=/";
+	}
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
